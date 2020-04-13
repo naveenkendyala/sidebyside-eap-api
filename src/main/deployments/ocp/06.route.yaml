@@ -1,0 +1,14 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    name: eap-jpa-api-jvm
+  name: eap-jpa-api-jvm-route
+spec:
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: eap-jpa-api-jvm-svc
+    weight: 100
+  wildcardPolicy: None
