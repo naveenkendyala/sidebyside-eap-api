@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    name: eap-jpa-api-jvm
+  name: eap-jpa-api-jvm-svc
+spec:
+  ports:
+  - port: 8080
+    nodePort: 30200
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    name: eap-jpa-api-jvm
+  type: NodePort
+status:
+  loadBalancer: {}
+
